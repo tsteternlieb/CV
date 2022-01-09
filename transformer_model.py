@@ -17,7 +17,7 @@ class DotProdAttention(nn.Module):
         self.query = nn.Linear(in_dim, out_dim)
         self.value = nn.Linear(in_dim, out_dim)
 
-    def forward(self, inputs):
+    def forward(self, inputs, mask=None):
         # q,k,v = (batch,seq,features)
         k = self.key(inputs)
         q = self.query(inputs)
@@ -29,6 +29,8 @@ class DotProdAttention(nn.Module):
         )  # (batch,seq,seq)
 
         softmax_scores = torch.softmax(scores, dim=2)
+        if mask:
+            pass
         return torch.matmul(softmax_scores, v)  # (batch,seq,features)
 
 

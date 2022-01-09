@@ -1,2 +1,2 @@
 # CV
-Modern CV implementations from scratch. ViT, SelfSupervised, patch extraction, etc etc
+Modern DeepLearning implementations from scratch for practice. ViT, SelfSupervised, patch extraction, etc etc
